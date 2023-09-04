@@ -234,9 +234,9 @@ const CartDetail = ({ className, ...props }) => {
 
 		if(Object.keys(discountData).length){
 			// eslint-disable-next-line no-unused-expressions
-			payload['discountId'] = discountData?.id,
-			payload['discountRate'] = Number(discountData?.discountPercentage),
-			payload['discountAmount'] = parseFloat(discountData?.discountAmount),
+			payload['discountId'] = discountData?.id
+			payload['discountRate'] = Number(discountData?.discountPercentage)
+			payload['discountAmount'] = parseFloat(discountData?.discountAmount)
 			payload['discountType'] = discountData?.discountType
 		}
 
