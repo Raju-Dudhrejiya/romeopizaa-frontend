@@ -158,7 +158,7 @@ const CartDetail = ({ className, ...props }) => {
 
 	useEffect(() => {
 		customer && fetchAddress()
-	}, [customer, open])
+	}, [customer, fetchAddress, open])
 
 	const handleAddress = () => {
 		handleToggle(addList?.length ? 'addressListPopup' : 'address')
@@ -212,7 +212,6 @@ const CartDetail = ({ className, ...props }) => {
 			discountRate: 0,
 			noOfPersons: '1',
 			createFrom: 'WEB',
-			discountType: null,
 			orderType: 'DiningIn',
 			notes: instruction?.value || '',
 			stripePid: data?.id || '',
@@ -228,13 +227,13 @@ const CartDetail = ({ className, ...props }) => {
 				modifiers
 			})),
 
-			"discountRate": 0,
 			"discountAmount": 1.00,
 			"discountType": "FIX"
 
 		}
 
 		if(Object.keys(discountData).length){
+			// eslint-disable-next-line no-unused-expressions
 			payload['discountId'] = discountData?.id,
 			payload['discountRate'] = Number(discountData?.discountPercentage),
 			payload['discountAmount'] = parseFloat(discountData?.discountAmount),
