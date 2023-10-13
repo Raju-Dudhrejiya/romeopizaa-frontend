@@ -214,12 +214,12 @@ const CartDetail = ({ className, ...props }) => {
 			totalAmount: Number(subTotal) + Number(totalTax) + 1 - Number(discountData?.discountAmount),
 			subTotalAmount: Number(subTotal),
 			taxTotalAmount: Number(totalTax),
-			discountRate: 0,
 			noOfPersons: '1',
 			DeliveryType: activeKey,
 			tipAmount: Number(String(tipCode).replace('$', '')),
 			createFrom: 'WEB',
-			discountType: null,
+			//discountRate: 0,
+			//discountType: null,
 			orderType: 'DiningIn',
 			notes: instruction?.value || '',
 			stripePid: data?.id || '',
@@ -235,9 +235,9 @@ const CartDetail = ({ className, ...props }) => {
 				modifiers
 			})),
 
-			"discountRate": 0,
-			"discountAmount": 1.00,
-			"discountType": "FIX"
+			// "discountRate": 0,
+			// "discountAmount": 1.00,
+			// "discountType": "FIX"
 
 		}
 
